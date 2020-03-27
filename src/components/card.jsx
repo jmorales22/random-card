@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import { Card, CardImage, Image, Content, Column } from 'bloomer';
 
-class Card extends Component {
+class RandomCard extends Component {
     state = {
         image: "",
         firstName: "",
@@ -34,16 +35,24 @@ class Card extends Component {
   render() {
     const { image, firstName, lastName, email, addressNumber, addressStreet, addressCity, addressCountry, phone} = this.state
     return (
-      <div>
-        <img src = { image } alt="person" />
-        <p>NAME: { firstName} {lastName}</p>
-        <p>EMAIL: { email }</p>
-        <p> ADDRESS: { addressNumber } {addressStreet} </p>
-        <p>{ addressCity }, {addressCountry} </p>
-        <p> PHONE: { phone }</p>
-      </div>
+      <Column>
+      <Card>
+      <Column>
+        <CardImage>
+          <Image src = { image } alt="person" />
+        </CardImage>
+        </Column>
+        <Content>
+          <p>NAME: { firstName} {lastName}</p>
+          <p>EMAIL: { email }</p>
+          <p>ADDRESS: { addressNumber } {addressStreet}</p>
+          <p>{ addressCity }, {addressCountry}</p>
+          <p>PHONE: { phone }</p>
+        </Content>
+      </Card>
+      </Column>
     );
   }
 }
 
-export default Card;
+export default RandomCard;

@@ -1,6 +1,8 @@
 import React from 'react';
-import './App.css';
-import Card from "./components/card";
+import RandomCard from "./components/card";
+import './App.css'
+import 'bulma/css/bulma.css'
+import { Columns, Column, Button } from 'bloomer';
 
 function App() {
   return (
@@ -8,17 +10,31 @@ function App() {
       <header className="App-header">
        <p>Random Card Generator</p>
       </header>
-      <row className="cards">
-        <div className="card1">
-          <Card />
-        </div>
-        <div className="card2">
-          <Card />
-        </div> 
-        <div className="card3">
-          <Card />
-        </div>
-        </row>
+    <Column hasTextAlign='centered'>
+        <Button href='/' isColor='success' isOutlined>Refresh Page</Button>
+    </Column>
+      <Columns isCentered>
+        <Column isSize='1/4'>
+            <RandomCard />
+          </Column>
+          <Column isSize='1/4'>
+            <RandomCard />
+          </Column>
+          <Column isSize='1/4'>
+            <RandomCard />
+          </Column>
+      </Columns>
+      <Columns isCentered>
+        <Column isSize='1/4'>
+            <RandomCard />
+          </Column>
+          <Column isSize='1/4'>
+            <RandomCard />
+          </Column>
+          <Column isSize='1/4'>
+            <RandomCard />
+          </Column>
+      </Columns>
     </div>
   );
 }
